@@ -1,15 +1,5 @@
 # Facile.it Hackathon 2015
 
-# Build Environment
-To allow everyone to build the website without platform specific dependencies
-we created a Docker image  containing Node, Sass and Grunt.
-
-The Docker image requires to be built the first time using the command:
-
-```
-make image
-```
-
 # Development
 
 ## Build the website
@@ -23,7 +13,7 @@ make build
 ```
 make serve
 ```
-And then visit it at `http://localhost:9001`
+And then visit it at `http://<host>:9001`
 
 
 # Deploy
