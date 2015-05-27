@@ -1,4 +1,4 @@
-.PHONY: build
+.PHONY: build image serve deploy
 image:
 	docker build -t facile-it/hackathon2015 .
 build:
