@@ -18,5 +18,3 @@ RUN chmod +x /build.sh
 WORKDIR /hackathon2015
 
 VOLUME ["/hackathon2015"]
-
-ENTRYPOINT ["sh", "/build.sh"]

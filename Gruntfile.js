@@ -69,6 +69,15 @@ module.exports = function(grunt) {
                 ],
             },
         },
+        connect: {
+            server: {
+                options: {
+                    port: 9001,
+                    base: 'build',
+                    keepalive: true,
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -76,9 +85,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     // Grunt force default
     grunt.option('force', true);
 
     grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'copy']);
+    grunt.registerTask('serve', "Development server with files watch", ['connect:server']);
 };
