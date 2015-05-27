@@ -73,23 +73,46 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 9001,
-                    base: 'build',
-                    keepalive: true,
+                    base: 'build'
                 }
             }
-        }
+        },
+        watch: {
+            scripts: {
+                files: ['src/js/*.js'],
+                tasks: ['concat', 'uglify'],
+                options: {
+                    spawn: false,
+                },
+            },
+            scss: {
+                files: ['src/sass/*.scss'],
+                tasks: ['sass', 'cssmin'],
+                options: {
+                    spawn: false,
+                },
+            },
+            html: {
+                files: ['src/*.html'],
+                tasks: ['copy'],
+                options: {
+                    spawn: false,
+                },
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-sass');
 
     // Grunt force default
     grunt.option('force', true);
 
     grunt.registerTask('default', ['concat', 'uglify', 'sass', 'cssmin', 'copy']);
-    grunt.registerTask('serve', "Development server with files watch", ['connect:server']);
+    grunt.registerTask('serve', "Development server with files watch", ['connect:server', 'watch']);
 };
