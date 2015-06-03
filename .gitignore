@@ -1,5 +1,6 @@
 .sass-cache
 node_modules
+nohup.out
 .grunt
 *.log
 logs

@@ -1,7 +1,63 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+@import 'base/reset.scss';
+@import 'base/font.scss';
+
+html,
+body {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: #e34713;
+    color: white;
+}
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+    position: relative;
+    font-size: 14px;
+}
+
+header {
+    position: relative;
+    background: #505050;
+    width: 100%;
+
+    .logo {
+        float:left;
+        display: block;
+
+        img {
+            width: 200px;
+        }
+    }
+
+    nav {
+        float: right;
+        padding: 20px;
+
+        a {
+            color: white;
+            text-transform: uppercase;
+            margin: 0 10px;
+
+            &:hover {
+                color: #e34713;
+            }
+        }
+    }
+}
+
+section {
+    position: relative;
+    width: 100%;
+
+    &:nth-child(odd) {
+        background-color: #ff6600;
+    }
+    &:nth-child(even) {
+        background-color:white;
+    }
+
+    .wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+    }
 }

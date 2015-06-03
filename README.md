@@ -15,6 +15,11 @@ make serve
 ```
 And then visit it at `http://<host>:9001`
 
+To kill the development server issue a
+
+```
+make kill
+```
 
 # Deploy
 
