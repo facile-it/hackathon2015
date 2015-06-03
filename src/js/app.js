@@ -1,1 +1,113 @@
-console.log("nothing here");
+$(document).ready(function() {
+
+    var $window = $(window); //You forgot this line in the above example
+
+    $('section[data-type="background"]').each(function(){
+        var $bgobj = $(this); // assigning the object
+
+        $(window).scroll(function() {
+            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+
+            // Put together our final background position
+            var coords = '50% '+ yPos + 'px';
+
+            // Move the background
+            $bgobj.css({ backgroundPosition: coords });
+        });
+    });
+
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+
+         //>=, not <=
+        if (scroll > 0) {
+            //clearHeader, not clearheader - caps H
+            $('header').addClass("fixed");
+            $(".logo i").removeClass("ZZ_icon_logo");
+            $(".logo i").addClass("ZZ_icon_logo_faccino");
+        }
+        else
+        {
+            $('header').removeClass("fixed");
+            $(".logo i").removeClass("ZZ_icon_logo_faccino");
+            $(".logo i").addClass("ZZ_icon_logo");
+        }
+
+    });
+
+    $('a[href*=#]').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+
+            if ($target.length) {
+              var targetOffset = $target.offset().top;
+              $('html,body').animate({scrollTop: targetOffset}, 1000);
+              return false;
+            }
+        }
+    });
+});
+
+var base = new google.maps.LatLng(45.497536, 9.221286);
+var marker;
+var map;
+
+function initialize() {
+    var styles = [
+        {
+          stylers: [
+            { hue: "#ff6600" },
+            { saturation: 10 }
+          ]
+        },{
+          featureType: "road",
+          elementType: "geometry",
+          stylers: [
+            { lightness: 100 },
+            { visibility: "simplified" }
+          ]
+        },{
+          featureType: "road",
+          elementType: "labels",
+          stylers: [
+            { visibility: "off" }
+          ]
+        }
+    ];
+
+    var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+
+    var mapOptions = {
+        zoom: 17,
+        center: base,
+        disableDefaultUI: true,
+        mapTypeControlOptions: {
+          mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+        }
+    };
+
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    marker = new google.maps.Marker({
+      position: base,
+      map: map,
+      animation: google.maps.Animation.DROP,
+    });
+
+    google.maps.event.addListener(marker, 'click', toggleBounce);
+
+    map.mapTypes.set('map_style', styledMap);
+    map.setMapTypeId('map_style');
+}
+
+function toggleBounce() {
+    if (marker.getAnimation() != null) {
+        marker.setAnimation(null);
+    } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
