@@ -1,19 +1,55 @@
 @mixin transition($transition-property, $transition-time, $method) {
     -webkit-transition: $transition-property $transition-time $method;
-    -moz-transition: $transition-property $transition-time $method;
-    -ms-transition: $transition-property $transition-time $method;
-    -o-transition: $transition-property $transition-time $method;
-    transition: $transition-property $transition-time $method;
+       -moz-transition: $transition-property $transition-time $method;
+        -ms-transition: $transition-property $transition-time $method;
+         -o-transition: $transition-property $transition-time $method;
+            transition: $transition-property $transition-time $method;
 }
 
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
+    -webkit-box-shadow: inset $top $left $blur $color;
+       -moz-box-shadow: inset $top $left $blur $color;
+            box-shadow: inset $top $left $blur $color;
   } @else {
     -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
+       -moz-box-shadow: $top $left $blur $color;
+            box-shadow: $top $left $blur $color;
   }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin scale($x, $y) {
+    -webkit-transform: scale($x, $y);
+       -moz-transform: scale($x, $y);
+        -ms-transform: scale($x, $y);
+         -o-transform: scale($x, $y);
+            transform: scale($x, $y);
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation: $animation $duration $delay forwards;
+       -moz-animation: $animation $duration $delay forwards;
+         -o-animation: $animation $duration $delay forwards;
+            animation: $animation $duration $delay forwards;
+}
+
+@-webkit-keyframes animatedBackground {
+    0%     { @include scale (1 , 1);     }
+    100%   { @include scale (1.1 , 1.1); }
+}
+
+@-moz-keyframes animatedBackground {
+    0%     { @include scale (1 , 1);     }
+    100%   { @include scale (1.1 , 1.1); }
+}
+@keyframes animatedBackground {
+    0%     { @include scale (1 , 1);     }
+    100%   { @include scale (1.1 , 1.1); }
 }

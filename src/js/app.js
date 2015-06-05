@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+
+    $("#content_tab li").hide(); // Initially hide all content
+    $("#tabs li:first").attr("id","current"); // Activate first tab
+    $("#content_tab li:first").fadeIn(); // Show first tab content
+
+    $('#tabs li a').click(function(e) {
+        e.preventDefault();
+        if ($(this).attr("class") == "current"){ //detection for current tab
+            return
+        }
+        else{
+            $("#content_tab li").hide(); //Hide all content
+            $("#tabs li").attr("class",""); //Reset id's
+            $(this).parent().attr("class","current"); // Activate this
+            $( $(this).attr('href')).fadeIn(); // Show content for current tab
+        }
+    });
+
     var $window = $(window); //You forgot this line in the above example
 
     $('section[data-type="background"]').each(function(){
@@ -19,24 +37,19 @@ $(document).ready(function() {
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-
          //>=, not <=
         if (scroll > 0) {
             //clearHeader, not clearheader - caps H
             $('header').addClass("fixed");
-            $(".logo i").removeClass("ZZ_icon_logo");
-            $(".logo i").addClass("ZZ_icon_logo_faccino");
         }
         else
         {
             $('header').removeClass("fixed");
-            $(".logo i").removeClass("ZZ_icon_logo_faccino");
-            $(".logo i").addClass("ZZ_icon_logo");
         }
 
     });
 
-    $('a[href*=#]').click(function() {
+    $('nav a[href*=#]').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var $target = $(this.hash);
             $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
@@ -83,6 +96,7 @@ function initialize() {
         zoom: 17,
         center: base,
         disableDefaultUI: true,
+        scrollwheel: false,
         mapTypeControlOptions: {
           mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
         }
