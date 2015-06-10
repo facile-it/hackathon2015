@@ -1,0 +1,144 @@
+header {
+    background: $primary-color;
+    height: 73px;
+    border-bottom: 3px solid $primary-color-dark;
+    overflow: hidden;
+
+    @include transition( height, 0s, ease-in-out);
+
+    &.fixed {
+        position: fixed;
+        z-index: 999;
+        height: 30px;
+        width: inherit;
+        overflow: hidden;
+
+        @include transition( height, 0.3s, ease-in-out);
+
+        &:hover {
+            height: 73px;
+            nav, .logo { display: block; }
+        }
+
+        nav, .logo { display: none;}
+    }
+
+    .logo {
+        float:left;
+        display: block;
+        padding: 12px;
+        color: white;
+        width: 290px;
+        height: 50px;
+        text-align: center;
+
+        .HT_icon {
+            line-height: 55px;
+            font-size: 80px;
+        }
+    }
+
+    nav {
+        float: right;
+
+        a {
+            color: white;
+            float: left;
+            text-transform: uppercase;
+            padding: 30px 25px;
+            display: block;
+
+            @include transition(all, 0.3s, ease);
+
+            &:hover {
+                background: $primary-color-dark;
+                color: white;
+            }
+        }
+    }
+
+
+    button{
+      display:none;
+      margin: 0 1em;
+      border:none;
+      background:none;
+      outline: none;
+
+      span{
+        display:block;
+      }
+    }
+
+    .lines-button {
+      padding: 1.1rem 0.8rem;
+      transition: .3s;
+      cursor: pointer;
+      float: right;
+      user-select: none;
+      border-radius: $button-size/7;
+    /* */
+      &:hover {
+        opacity: 1;
+      }
+      &:active {
+        transition: 0;
+      }
+    }
+
+    .lines {
+      @include line;
+      position: relative;
+
+      &:before, &:after {
+       @include line;
+        position: absolute;
+        left:0;
+        content: '';
+        -webkit-transform-origin: $button-size/14 center;
+                transform-origin: $button-size/14 center;
+      }
+      &:before {
+        top: $button-size/4;
+      }
+      &:after {
+        top: -$button-size/4;
+      }
+    }
+
+    .lines-button.x2{
+        .lines{
+          transition: background .3s .5s ease;
+
+          &:before, &:after{
+            //set transform origin
+          -webkit-transform-origin: 50% 50%;
+                  transform-origin: 50% 50%;
+            transition: top .3s .6s ease, -webkit-transform .3s ease;
+            transition: top .3s .6s ease, transform .3s ease;
+          }
+        }
+    }
+
+    .lines-button.x2.close{
+      .lines {
+        transition: background .3s 0s ease;
+        background: transparent;
+
+        &:before, &:after{
+          transition: top .3s ease, -webkit-transform .3s .5s ease;//delay the formation of the x till the minus is formed
+          transition: top .3s ease, transform .3s .5s ease;//delay the formation of the x till the minus is formed
+          top:0;
+          width: $button-size;
+        }
+        &:before{
+          -webkit-transform: rotate3d(0,0,1,45deg);
+                  transform: rotate3d(0,0,1,45deg);
+        }
+        &:after{
+          -webkit-transform: rotate3d(0,0,1,-45deg);
+                  transform: rotate3d(0,0,1,-45deg);
+        }
+      }
+    }
+}

@@ -1,0 +1,39 @@
+footer {
+    background: $secondary-color;
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+    font-size: 14px;
+
+    @media screen and (max-width: $break-large) {
+        padding: 20px 0;
+        .row {
+            padding: 15px;
+            width: auto !important;
+            max-width: inherit;
+        }
+    }
+
+    .social_list {
+        li {
+            a {
+                color: white;
+                font-size: 1.5em;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            float: left;
+            margin-right: 10px;
+        }
+        float: right;
+    }
+
+    .row {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 69.5em;
+    }
+}

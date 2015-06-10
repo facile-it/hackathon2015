@@ -1,17 +1,17 @@
-@import 'base/reset.scss';
-@import 'base/font.scss';
-@import 'base/mixins.scss';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/media_queries';
 
-$primary-color: #ff6600;
-$primary-color-dark: #e34713;
-$secondary-color: #505050;
-$secondary-color-light: #909090;
+@import 'base/reset';
+@import 'base/font';
+
+@import 'partials/header';
+@import 'partials/footer';
 
 html,
 body {
     height: 100%;
     width: 100%;
-    display: none;
     color: $secondary-color;
 }
 
@@ -22,58 +22,6 @@ body {
 }
 
 a { color: $primary-color; }
-
-header {
-    background: $primary-color;
-    min-height: 73px;
-    border-bottom: 3px solid $primary-color-dark;
-
-    @include transition( min-height, 0.6s, ease-in);
-
-    &.fixed {
-        position: fixed;
-        z-index: 999;
-        min-height: 30px;
-        width: inherit;
-
-        &:hover {
-            height: 73px;
-            nav, .logo { display: block; }
-        }
-
-        nav, .logo { display: none;}
-    }
-
-    .logo {
-        float:left;
-        display: block;
-        padding: 12px;
-        color: white;
-
-        i {
-            font-size: 3.5em;
-        }
-    }
-
-    nav {
-        float: right;
-
-        a {
-            color: white;
-            float: left;
-            text-transform: uppercase;
-            padding: 30px 25px;
-            display: block;
-
-            @include transition(all, 0.3s, ease);
-
-            &:hover {
-                background: $primary-color-dark;
-                color: white;
-            }
-        }
-    }
-}
 
 section {
     position: relative;
@@ -93,17 +41,20 @@ section {
     }
 }
 
+
 .first_section {
     background: url('../images/bg.jpg') 50% 0 repeat fixed;
     background-size: cover;
     min-height: 700px;
     text-align: center;
 
-    img {
-        margin-top: 210px;
+    .HT_icon {
+        font-size: 110px;
+        color: white;
+        display: inline-block;
+        margin-top: 100px;
     }
     h1 {
-        margin-top: 20px;
         color: white;
         font-weight: bold;
         font-size: 26px;
@@ -131,7 +82,7 @@ section {
 
     li {
         &.current a {
-            background: #bebebe;
+            background: $primary-color;
             color: white;
             font-size: 22px;
             height: 30px;
@@ -149,13 +100,14 @@ section {
         background: #d7d7d7;
 
         @include transition(all, 0.3s, ease);
+
     }
 }
 
 .lista_giuria {
     margin-top: 30px;
 
-    > div {
+    article {
         float: left;
         width: 33%;
         text-align: center;
@@ -189,6 +141,7 @@ section {
         @include border-radius(50%);
 
         img {
+            width: 100%;
             @include transition(all, 0.3s, linear);
         }
     }
@@ -210,39 +163,165 @@ section {
     strong { font-weight: bold; }
 }
 
-footer {
-    background: $secondary-color;
-    color: white;
-    padding: 40px 0;
-    width: 100%;
-    font-size: 14px;
-
-    .social_list {
-        li {
-            a {
-                color: white;
-                font-size: 1.5em;
-
-                &:hover {
-                    color: $primary-color;
-                }
-            }
-
-            float: left;
-            margin-right: 10px;
-        }
-        float: right;
-    }
-
-    .row {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 69.5em;
-    }
-}
 
 #map-canvas {
     min-height: 350px;
     margin: 0px;
     padding: 0px;
+}
+
+
+
+@media screen and (max-width: $break-small), (max-width: $break-small-landscape) {
+    header {
+        height: auto;
+
+        button { display: inline-block;  }
+
+        &.fixed {
+            height: auto;
+            &:hover {
+                nav { display: none; } 
+                height: auto;
+            }
+
+            .logo {
+                padding: 0 10px;
+                width: auto;
+                display: block;
+            }
+            .HT_icon {
+                line-height: 55px;
+                font-size: 55px;
+                height: auto;
+            }
+        }
+        .logo {
+            padding: 0 10px;
+            width: auto;
+            display: block;
+
+            .HT_icon {
+                line-height: 55px;
+                font-size: 55px;
+                height: auto;
+            }
+        }
+    }
+
+    header nav {
+        display: none;
+        float: none;
+        clear: both;
+        background-color: $primary-color-dark;
+
+        a {
+            float: none;
+            text-align: left;
+            padding: 15px;
+            text-align: left;
+        }
+    }
+
+
+    section h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .first_section  {  min-height:  200px !important;  }
+    .first_section .HT_icon {
+        margin-top: 70px;
+        width: 100%;
+        font-size: 75px;
+    }
+    .first_section h1 { font-size: 20px;  }
+    .schedule_day { line-height: 2em;  }
+    .schedule_day td {
+        font-size: 14px;
+        line-height: 2em;
+    }
+
+    .schedule_button li.current a {
+        height: auto;
+        font-size: 14px;
+    }
+
+    .schedule_button a {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+    .lista_giuria article {
+        float: none;
+        width: inherit;
+        margin-bottom: 15px;
+    }
+    .lista_giuria h2 { margin-bottom: 0; }
+
+    .box_premio img {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    footer {
+        text-align: center;
+
+        .social_list {
+            float: none;
+            width: 100%;
+            margin-top: 25px;
+            display: inline-block;
+        }
+        .social_list li {
+            width: 20%;
+            margin-right: 0;
+            text-align: center;
+
+            .HT_icon { font-size: 28px;}
+        }
+    }
+}
+
+
+@media only screen and (min-device-width : 340px) and (max-device-width : 667px) and (orientation : landscape) {
+    .lista_giuria {
+        article {
+          width: 100%;
+          clear: both;
+
+          h2 { text-align: left; margin: 0; }
+          h2, p { padding-left: 38%; }
+
+          figure {
+              float: left;
+              width: 170px !important;
+              height: 170px !important;
+              margin-left: 20px;
+          }
+        }
+    }
+}
+
+@media screen and (max-width: $break-medium) {
+    section .row {
+        width: auto;
+        padding: 20px;
+    }
+
+    .biglietti { width: 100%; }
+
+    p { font-size: 16px; }
+}
+
+@media screen and (max-width: $break-large) {
+    .first_section {
+        min-height:  500px;
+
+        .HT_icon {
+            margin-top: 70px;
+        }
+    }
+    .lista_giuria p {
+        padding: 15px;
+    }
 }
