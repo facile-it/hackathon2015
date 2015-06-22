@@ -40,6 +40,7 @@ header {
 
     nav {
         float: right;
+        display: block;
 
         a {
             color: white;
@@ -71,13 +72,12 @@ header {
     }
 
     .lines-button {
-      padding: 1.1rem 0.8rem;
+      padding: 1.5rem 0.8rem;
       transition: .3s;
       cursor: pointer;
       float: right;
       user-select: none;
       border-radius: $button-size/7;
-    /* */
       &:hover {
         opacity: 1;
       }

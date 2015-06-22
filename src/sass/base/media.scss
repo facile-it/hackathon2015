@@ -1,0 +1,235 @@
+@media screen and (max-width: $break-small), (max-width: $break-middle), (max-width: $break-small-landscape) {
+    header {
+        height: auto !important;
+
+        button { display: inline-block;  }
+
+        &.fixed {
+            height: auto;
+            position: relative !important;
+
+            &:hover {
+                nav {
+                    display: none;
+                    float: none;
+                }
+                height: auto;
+                position: relative !important;
+            }
+
+            .logo {
+                padding: 0 10px;
+                width: auto !important;
+                display: block;
+            }
+            .HT_icon {
+                line-height: 55px;
+                font-size: 55px;
+                height: auto;
+            }
+        }
+        .logo {
+            padding: 0 10px;
+            width: auto;
+            display: block;
+
+            .HT_icon {
+                line-height: 55px;
+                font-size: 55px;
+                height: auto;
+            }
+        }
+        nav {
+            float: none;
+            clear: both;
+            width: 100% !important;
+            position: relative;
+            display: none;
+
+            background-color: $primary-color-dark;
+
+            a {
+                float: none;
+                text-align: left;
+                padding: 15px !important;
+                text-align: left;
+            }
+        }
+    }
+
+    section h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .first_section  {
+        background-position: center center ;
+        background-size:inherit;
+        min-height:  200px !important;
+    }
+    .first_section .HT_icon {
+        margin-top: 70px;
+        width: 100%;
+        font-size: 75px;
+    }
+    .first_section h1 { font-size: 20px;  }
+    .schedule_day { line-height: 2em;  }
+    .schedule_day td {
+        font-size: 14px;
+        line-height: 2em;
+    }
+
+    .schedule_button li.current a {
+        height: auto;
+        font-size: 14px;
+    }
+
+    .schedule_button a {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+    .lista_giuria article {
+        float: none;
+        width: inherit;
+        margin-bottom: 15px;
+    }
+    .lista_giuria h2 { margin-bottom: 0; }
+
+    .box_premio img {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    footer {
+        text-align: center;
+
+        .social_list {
+            float: none;
+            width: 100%;
+            margin-top: 25px;
+            display: inline-block;
+        }
+        .social_list li {
+            width: 20%;
+            margin-right: 0;
+            text-align: center;
+
+            .HT_icon { font-size: 28px;}
+        }
+    }
+
+
+    #map-canvas {
+        min-height: 250px;
+    }
+}
+
+
+@media only screen and (min-device-width : 340px) and (max-device-width : 667px) and (orientation : landscape) {
+    .lista_giuria {
+        article {
+          width: 100%;
+          clear: both;
+
+          h2 { text-align: left; margin: 0; }
+          h2, p { padding-left: 38%; }
+
+          figure {
+              float: left;
+              width: 170px !important;
+              height: 170px !important;
+              margin-left: 20px;
+          }
+        }
+    }
+    .first_section  {  min-height:  200px !important;  }
+}
+
+@media only screen and (min-width : 667px) and (max-width: $break-middle) {
+    .lista_giuria {
+        article {
+          width: 100%;
+          clear: both;
+
+          h2 { text-align: left; margin: 0; }
+          h2, p { padding-left: 38%; }
+
+          figure {
+              float: left;
+              width: 170px !important;
+              height: 170px !important;
+              margin-left: 20px;
+          }
+        }
+    }
+}
+
+
+@media screen and (max-width: $break-medium) {
+
+    header {
+        height: 65px;
+
+        .logo {
+            padding: 7px 12px;
+            width: 25%;
+
+            .HT_icon {
+                font-size: 65px;
+                height: auto;
+            }
+        }
+        &.fixed {
+            height: auto;
+            position: relative !important;
+
+
+            &:hover {
+                height: 65px;
+            }
+        }
+
+        nav {
+            width: 65%;
+            a {
+                padding: 26px 14px;
+            }
+        }
+    }
+
+    section .row {
+        width: auto;
+        padding: 20px;
+    }
+
+    .biglietti { width: 100%; }
+
+    p { font-size: 16px; }
+}
+
+@media screen and (max-width: $break-large) {
+    header nav {
+        a {
+            padding: 30px 20px;
+        }
+    }
+    .footer {
+        padding: 20px 0;
+        .row {
+            padding: 15px;
+            width: auto !important;
+            max-width: inherit;
+        }
+    }
+
+    .first_section {
+        min-height:  500px;
+
+        .HT_icon {
+            margin-top: 70px;
+        }
+    }
+    .lista_giuria p {
+        padding: 15px;
+    }
+}

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'hackathon';
-	src:url('../font/hackathon.eot?un2sy0');
-	src:url('../font/hackathon.eot?#iefixun2sy0') format('embedded-opentype'),
-		url('../font/hackathon.ttf?un2sy0') format('truetype'),
-		url('../font/hackathon.woff?un2sy0') format('woff'),
-		url('../font/hackathon.svg?un2sy0#hackathon') format('svg');
+	src:url('../font/hackathon.eot?-ielu6m');
+	src:url('../font/hackathon.eot?#iefix-ielu6m') format('embedded-opentype'),
+		url('../font/hackathon.ttf?-ielu6m') format('truetype'),
+		url('../font/hackathon.woff?-ielu6m') format('woff'),
+		url('../font/hackathon.svg?-ielu6m#hackathon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,9 +23,39 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.HT_icon_social_facebook:before { content: "\e600";}
-.HT_icon_social_googlePlus:before {	content: "\e601";}
-.HT_icon_social_linkedin:before {	content: "\e602";}
-.HT_icon_social_twitter:before {	content: "\e603";}
-.HT_icon_social_youTube:before {	content: "\e604";}
-.HT_icon_logo_hackathon:before {	content: "\e605";}
+.HT_icon_maps:before {
+	content: "\e608";
+}
+.HT_icon_jury:before {
+	content: "\e609";
+}
+.HT_icon_ticket:before {
+	content: "\e60a";
+}
+.HT_icon_calendar:before {
+	content: "\e60b";
+}
+.HT_icon_prize:before {
+	content: "\e607";
+}
+.HT_icon_details:before {
+	content: "\e606";
+}
+.HT_icon_social_facebook:before {
+	content: "\e600";
+}
+.HT_icon_social_googlePlus:before {
+	content: "\e601";
+}
+.HT_icon_social_linkedin:before {
+	content: "\e602";
+}
+.HT_icon_social_twitter:before {
+	content: "\e603";
+}
+.HT_icon_social_youTube:before {
+	content: "\e604";
+}
+.HT_icon_logo_hackathon:before {
+	content: "\e605";
+}

@@ -1,0 +1,159 @@
+section {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+
+        i { margin-right: 10px; }
+    }
+
+    .row {
+        width: 100%;
+        padding: 50px 0;
+        margin: 0 auto;
+        max-width: 69.5em;
+    }
+}
+
+
+.first_section {
+    background: url('../images/bg.jpg') 50% 0 repeat fixed;
+    background-size: cover;
+    min-height: 700px;
+    text-align: center;
+
+    .HT_icon {
+        font-size: 110px;
+        color: white;
+        display: inline-block;
+        margin-top: 100px;
+    }
+    h1 {
+        color: white;
+        font-weight: bold;
+        font-size: 26px;
+    }
+}
+
+.schedule_day {
+    line-height: 3em;
+
+    td {
+        font-size: 18px;
+
+        &:not(.desc) {
+            font-weight: bold;
+            color: $primary-color-dark;
+            text-align: center;
+        }
+        &.dash { padding: 0 15px; }
+        &.desc { padding-left: 20px; }
+    }
+}
+
+.schedule_button {
+    margin-bottom: 30px;
+
+    li {
+        &.current a {
+            background: $primary-color;
+            color: white;
+            font-size: 22px;
+            height: 30px;
+        }
+        float: left;
+        width: 50%;
+    }
+
+    a {
+        text-align: center;
+        display: block;
+        padding: 20px;
+        color: white;
+        font-size: 18px;
+        background: #d7d7d7;
+
+        @include transition(all, 0.3s, ease);
+
+    }
+}
+
+.lista_giuria {
+    margin-top: 30px;
+
+    article {
+        float: left;
+        width: 33%;
+        text-align: center;
+
+        &:hover .photo img {
+            @include scale(1.1, 1.1);
+        }
+
+        .photo {
+            display: inline-block;
+            max-width: 210px;
+            width: 100%;
+            overflow: hidden;
+
+            @include border-radius(50%);
+
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+            -webkit-transition: opacity .4s ease;
+            -moz-transition: opacity .4s ease;
+            -ms-transition: opacity .4s ease;
+            -o-transition: opacity .4s ease;
+            transition: opacity .4s ease;
+
+
+            img {
+                width: 100%;
+                height: auto;
+                @include transition(all, 0.3s, ease);
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: bold;
+
+        span {
+            display: block;
+            font-size: 18px;
+            font-weight: normal;
+            color: #d7d7d7;
+        }
+    }
+
+
+    p {
+        padding: 15px 30px;
+        text-align: justify;
+    }
+}
+
+.box_premio {
+    margin-top: 40px;
+
+    img {
+        margin-right: 30px;
+        float: left;
+    }
+
+    strong { font-weight: bold; }
+}
+
+
+#map-canvas {
+    min-height: 350px;
+    margin: 0px;
+    padding: 0px;
+}
