@@ -4,23 +4,11 @@ header {
     border-bottom: 3px solid $primary-color-dark;
     overflow: hidden;
 
-    @include transition( height, 0s, ease-in-out);
-
     &.fixed {
         position: fixed;
         z-index: 999;
-        height: 30px;
         width: inherit;
         overflow: hidden;
-
-        @include transition( height, 0.3s, ease-in-out);
-
-        &:hover {
-            height: 73px;
-            nav, .logo { display: block; }
-        }
-
-        nav, .logo { display: none;}
     }
 
     .logo {
@@ -48,8 +36,6 @@ header {
             text-transform: uppercase;
             padding: 30px 25px;
             display: block;
-
-            @include transition(all, 0.3s, ease);
 
             &:hover {
                 background: $primary-color-dark;

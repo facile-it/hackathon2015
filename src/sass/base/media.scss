@@ -8,15 +8,6 @@
             height: auto;
             position: relative !important;
 
-            &:hover {
-                nav {
-                    display: none;
-                    float: none;
-                }
-                height: auto;
-                position: relative !important;
-            }
-
             .logo {
                 padding: 0 10px;
                 width: auto !important;
@@ -47,6 +38,10 @@
             display: none;
 
             background-color: $primary-color-dark;
+
+            &.open {
+                display: block;
+            }
 
             a {
                 float: none;
@@ -181,7 +176,7 @@
         }
         &.fixed {
             height: auto;
-            position: relative !important;
+            position: fixed !important;
 
 
             &:hover {
@@ -192,7 +187,7 @@
         nav {
             width: 65%;
             a {
-                padding: 26px 14px;
+                padding: 26px 12px;
             }
         }
     }
@@ -208,7 +203,7 @@
 }
 
 @media screen and (max-width: $break-large) {
-    header nav {
+    nav {
         a {
             padding: 30px 20px;
         }

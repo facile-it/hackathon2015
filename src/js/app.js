@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(".lines-button").click(function(e) {
         e.preventDefault();
         $(this).toggleClass("close");
-        $("header nav").toggle();
+        $("header nav").toggleClass("open");
         return true;
     });
 
