@@ -9,7 +9,6 @@
             position: relative !important;
 
             .logo {
-                padding: 0 10px;
                 width: auto !important;
                 display: block;
             }
@@ -19,14 +18,15 @@
                 height: auto;
             }
         }
+
         .logo {
             padding: 0 10px;
-            width: auto;
+            width: auto !important;
             display: block;
 
             .HT_icon {
                 line-height: 55px;
-                font-size: 55px;
+                font-size: 55px !important;
                 height: auto;
             }
         }
@@ -176,7 +176,7 @@
         }
         &.fixed {
             height: auto;
-            position: fixed !important;
+            position: fixed;
 
 
             &:hover {
