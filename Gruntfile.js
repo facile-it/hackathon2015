@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'build/css/app.css': 'src/sass/app.scss',
+                    'build/css/app.css': 'src/sass/app.scss'
                 }
             }
         },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             },
             core: {
                 files: {
-                    'build/css/app.css': 'build/css/app.css',
+                    'build/css/app.css': 'build/css/app.css'
                 }
             }
         },
@@ -76,12 +76,19 @@ module.exports = function(grunt) {
                     {
                         flatten: true,
                         expand: true,
+                        src: ['src/media/*.*'],
+                        dest: 'build/media',
+                        filter: 'isFile'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
                         src: ['src/font/*.*'],
                         dest: 'build/font',
                         filter: 'isFile'
-                    },
-                ],
-            },
+                    }
+                ]
+            }
         },
         connect: {
             server: {
@@ -96,24 +103,24 @@ module.exports = function(grunt) {
                 files: ['src/js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
-                    spawn: false,
-                },
+                    spawn: false
+                }
             },
             scss: {
                 files: ['src/sass/*.scss'],
                 tasks: ['sass', 'cssmin'],
                 options: {
-                    spawn: false,
-                },
+                    spawn: false
+                }
             },
             html: {
                 files: ['src/*.html'],
                 tasks: ['copy'],
                 options: {
-                    spawn: false,
-                },
-            },
-        },
+                    spawn: false
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
