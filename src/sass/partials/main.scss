@@ -86,6 +86,10 @@ section {
 .lista_giuria {
     margin-top: 30px;
 
+    &.double article {
+        width: 50%;
+    }
+
     article {
         float: left;
         width: 33%;
@@ -135,24 +139,28 @@ section {
         }
     }
 
-
     p {
         padding: 15px 30px;
         text-align: justify;
     }
 }
 
+.box_frame_biglietti {
+    display: block;
+    margin-top: 25px;
+}
+
 .box_premio {
     margin-top: 40px;
 
     img {
-        margin-right: 30px;
+        margin-top: 20px;
         float: left;
+        width: 38%;
     }
-
+    p { padding-left: 43%; }
     strong { font-weight: bold; }
 }
-
 
 #map-canvas {
     min-height: 350px;

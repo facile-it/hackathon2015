@@ -82,6 +82,7 @@
         font-size: 14px;
         padding: 15px 0;
     }
+    .lista_giuria.double article { width: inherit; }
     .lista_giuria article {
         float: none;
         width: inherit;
@@ -89,10 +90,13 @@
     }
     .lista_giuria h2 { margin-bottom: 0; }
 
-    .box_premio img {
-        float: none;
-        width: 100%;
-        margin: 0 0 20px;
+    .box_premio {
+        p { padding-left: 0;  }
+        img {
+            float: none;
+            width: 100%;
+            margin: 0 0 20px;
+        }
     }
 
     footer {
