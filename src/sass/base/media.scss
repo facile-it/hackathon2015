@@ -60,9 +60,10 @@
         background-position: center center ;
         background-size:inherit;
         min-height:  200px !important;
+        padding-top: 0;
     }
     .first_section .HT_icon {
-        margin-top: 70px;
+        margin-top: 30px !important;
         width: 100%;
         font-size: 75px;
     }
@@ -176,6 +177,7 @@
             .HT_icon {
                 font-size: 65px;
                 height: auto;
+                margin-top: 70px;
             }
         }
         &.fixed {
@@ -199,6 +201,9 @@
     section .row {
         width: auto;
         padding: 20px;
+    }
+    section h1 {
+        font-size: 20px;
     }
 
     .biglietti { width: 100%; }

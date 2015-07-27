@@ -40,7 +40,7 @@ $(document).ready(function() {
             $bgobj.css({ backgroundPosition: coords });
         });
     });
-
+/*
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
@@ -54,21 +54,39 @@ $(document).ready(function() {
             $('header').removeClass("fixed");
         }
 
-    });
+    });*/
 
-    $('nav a[href*=#]').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var targetOffset = 0;
-            var $target = $(this.hash);
-            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+    var offset = 0;
 
-            if ($target.length) {
-              var targetOffset = $target.offset().top - 70;
-              $('html,body').animate({scrollTop: targetOffset}, 1000);
-              return false;
-            }
+    $('nav a[href^="#"]').on('click',function (e) {
+
+        if ($(window).width() < 840) {
+            $('nav').removeClass('open');
+            $('.lines-button').removeClass('close');
+            $offset = 0;
         }
-    });
+        else {
+            $offset = 70;
+        }
+
+        // target element id
+        var id = $(this).attr('href');
+
+        // target element
+        var $id = $(id);
+        if ($id.length === 0) {
+            return;
+        }
+
+        // prevent standard hash navigation (avoid blinking in IE)
+        e.preventDefault();
+
+        // top position relative to the document
+        var pos = $(id).offset().top - $offset;
+
+        // animated top scrolling
+        $('body, html').animate({scrollTop: pos});
+	});
 });
 
 var base = new google.maps.LatLng(45.497536, 9.221286);
