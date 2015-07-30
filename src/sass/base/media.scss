@@ -1,23 +1,9 @@
 @media screen and (max-width: $break-small), (max-width: $break-middle), (max-width: $break-small-landscape) {
     header {
         height: auto !important;
+        position: relative !important;
 
         button { display: inline-block;  }
-
-        &.fixed {
-            height: auto;
-            position: relative !important;
-
-            .logo {
-                width: auto !important;
-                display: block;
-            }
-            .HT_icon {
-                line-height: 55px;
-                font-size: 55px;
-                height: auto;
-            }
-        }
 
         .logo {
             padding: 0 10px;
@@ -26,7 +12,7 @@
 
             .HT_icon {
                 line-height: 55px;
-                font-size: 55px !important;
+                margin-top: 0;
                 height: auto;
             }
         }
@@ -37,7 +23,7 @@
             position: relative;
             display: none;
 
-            background-color: $primary-color-dark;
+            background-color: white;
 
             &.open {
                 display: block;
@@ -48,6 +34,7 @@
                 text-align: left;
                 padding: 15px !important;
                 text-align: left;
+                color:  $primary-color-dark;
             }
         }
     }
@@ -84,10 +71,11 @@
         padding: 15px 0;
     }
     .lista_giuria.double article { width: inherit; }
+    .lista_giuria article .photo { max-width: 150px; }
     .lista_giuria article {
         float: none;
         width: inherit;
-        margin-bottom: 15px;
+        margin: 20px 0;
     }
     .lista_giuria h2 { margin-bottom: 0; }
 
@@ -125,6 +113,28 @@
 }
 
 
+@media screen and (max-width: $break-middle) {
+    header {
+        height: 65px;
+
+        .logo {
+            padding: 5px 0 5px 135px !important;
+            background-size: auto 37px !important;
+
+            .HT_icon {
+                font-size: 30px !important;
+                height: auto;
+            }
+        }
+
+        nav {
+            a {
+                padding: 26px 12px;
+            }
+        }
+    }
+}
+
 @media only screen and (min-device-width : 340px) and (max-device-width : 667px) and (orientation : landscape) {
     .lista_giuria {
         article {
@@ -150,6 +160,9 @@
         article {
           width: 100%;
           clear: both;
+          display: inline-block;
+
+          .photo { max-width: 210px; }
 
           h2 { text-align: left; margin: 0; }
           h2, p { padding-left: 38%; }
@@ -171,27 +184,16 @@
         height: 65px;
 
         .logo {
-            padding: 7px 12px;
-            width: 25%;
+            padding: 7px 12px 7px 180px;
+            background-size: auto 40px;
 
             .HT_icon {
-                font-size: 65px;
+                font-size: 40px;
                 height: auto;
-                margin-top: 70px;
-            }
-        }
-        &.fixed {
-            height: auto;
-            position: fixed;
-
-
-            &:hover {
-                height: 65px;
             }
         }
 
         nav {
-            width: 65%;
             a {
                 padding: 26px 12px;
             }
@@ -212,11 +214,26 @@
 }
 
 @media screen and (max-width: $break-large) {
-    nav {
-        a {
-            padding: 30px 20px;
+    header {
+        .logo {
+            padding: 12px 12px 12px 165px;
+            background-size: auto 45px;
+            background-position: 5px 10px;
+
+            .HT_icon {
+                font-size: 50px;
+                height: auto;
+                margin-top: 70px;
+            }
+        }
+
+        nav {
+            a {
+                padding: 30px 15px;
+            }
         }
     }
+
     .footer {
         padding: 20px 0;
         .row {

@@ -1,5 +1,5 @@
 header {
-    background: $primary-color;
+    background: white;
     height: 73px;
     border-bottom: 3px solid $primary-color-dark;
     overflow: hidden;
@@ -14,15 +14,17 @@ header {
     .logo {
         float:left;
         display: block;
-        padding: 12px;
-        color: white;
-        width: 290px;
+        padding: 12px 12px 12px 220px;
+        background: url('../images/logo_facile.png') no-repeat 5px 5px;
+        background-size: auto 60px;
+        color: $primary-color;
+        width: auto;
         height: 50px;
         text-align: center;
 
         .HT_icon {
             line-height: 55px;
-            font-size: 80px;
+            font-size: 60px;
         }
     }
 
@@ -31,10 +33,10 @@ header {
         display: block;
 
         a {
-            color: white;
+            color: $primary-color-dark;
             float: left;
             text-transform: uppercase;
-            padding: 30px 25px;
+            padding: 30px 20px;
             display: block;
 
             &:hover {
