@@ -86,6 +86,12 @@ module.exports = function(grunt) {
                         src: ['src/font/*.*'],
                         dest: 'build/font',
                         filter: 'isFile'
+                    },
+                    {
+                        cwd: 'src/config',
+                        src: 'CNAME',
+                        dest: 'build/',
+                        expand: true,
                     }
                 ]
             }
