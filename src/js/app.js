@@ -31,30 +31,19 @@ $(document).ready(function() {
         var $bgobj = $(this); // assigning the object
 
         $(window).scroll(function() {
-            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+            var yPos = -($(this).scrollTop() / $bgobj.data('speed'));
 
             // Put together our final background position
             var coords = '50% '+ yPos + 'px';
 
             // Move the background
             $bgobj.css({ backgroundPosition: coords });
+
+            $bgobj.find('.row').css({
+                'margin-top' : -(yPos)+"px"
+            }); 
         });
     });
-/*
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-
-         //>=, not <=
-        if (scroll > 0) {
-            //clearHeader, not clearheader - caps H
-            $('header').addClass("fixed");
-        }
-        else
-        {
-            $('header').removeClass("fixed");
-        }
-
-    });*/
 
     var offset = 0;
 
@@ -86,7 +75,7 @@ $(document).ready(function() {
 
         // animated top scrolling
         $('body, html').animate({scrollTop: pos});
-	});
+    });
 });
 
 var base = new google.maps.LatLng(45.497536, 9.221286);
