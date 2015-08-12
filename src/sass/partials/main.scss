@@ -97,10 +97,6 @@ section {
         width: 33%;
         text-align: center;
 
-        &:hover .photo img {
-            @include scale(1.1, 1.1);
-        }
-
         .photo {
             display: inline-block;
             max-width: 210px;
@@ -110,18 +106,10 @@ section {
             @include border-radius(50%);
 
             filter: alpha(opacity=50);
-            opacity: 0.5;
-            -webkit-transition: opacity .4s ease;
-            -moz-transition: opacity .4s ease;
-            -ms-transition: opacity .4s ease;
-            -o-transition: opacity .4s ease;
-            transition: opacity .4s ease;
-
-
+            opacity: 0.8;
             img {
                 width: 100%;
                 height: auto;
-                @include transition(all, 0.3s, ease);
             }
         }
     }
