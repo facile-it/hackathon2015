@@ -1,132 +1,133 @@
 header {
-    background: white;
-    height: 73px;
-    border-bottom: 3px solid $primary-color-dark;
+  background: white;
+  height: 73px;
+  border-bottom: 3px solid $primary-color-dark;
+  overflow: hidden;
+
+  &.fixed {
+    position: fixed;
+    z-index: 999;
+    width: inherit;
     overflow: hidden;
+  }
 
-    &.fixed {
-        position: fixed;
-        z-index: 999;
-        width: inherit;
-        overflow: hidden;
+  .logo {
+    float: left;
+    display: block;
+    padding: 12px 12px 12px 220px;
+    background: url('../images/logo_facile.png') no-repeat 5px 5px;
+    background-size: auto 60px;
+    color: $primary-color;
+    width: auto;
+    height: 50px;
+    text-align: center;
+
+    .HT_icon {
+      line-height: 55px;
+      font-size: 60px;
     }
 
-    .logo {
-        float:left;
-        display: block;
-        padding: 12px 12px 12px 220px;
-        background: url('../images/logo_facile.png') no-repeat 5px 5px;
-        background-size: auto 60px;
-        color: $primary-color;
-        width: auto;
-        height: 50px;
-        text-align: center;
-
-        .HT_icon {
-            line-height: 55px;
-            font-size: 60px;
-        }
-    }
-
-    nav {
-        float: right;
-        display: block;
-
-        a {
-            color: $primary-color-dark;
-            float: left;
-            text-transform: uppercase;
-            padding: 30px 20px;
-            display: block;
-
-            &:hover {
-                background: $primary-color-dark;
-                color: white;
-            }
-        }
-    }
+  }
 
 
-    button{
-      display:none;
-      margin: 0 1em;
-      border:none;
-      background:none;
-      outline: none;
+  nav {
+    float: right;
+    display: block;
 
-      span{
-        display:block;
-      }
-    }
+    a {
+      color: $primary-color-dark;
+      float: left;
+      text-transform: uppercase;
+      padding: 30px 20px;
+      display: block;
 
-    .lines-button {
-      padding: 1.5rem 0.8rem;
-      transition: .3s;
-      cursor: pointer;
-      float: right;
-      user-select: none;
-      border-radius: $button-size/7;
       &:hover {
-        opacity: 1;
-      }
-      &:active {
-        transition: 0;
+        background: $primary-color-dark;
+        color: white;
       }
     }
+  }
 
-    .lines {
+  button {
+    display: none;
+    margin: 0 1em;
+    border: none;
+    background: none;
+    outline: none;
+
+    span {
+      display: block;
+    }
+  }
+
+  .lines-button {
+    padding: 1.5rem 0.8rem;
+    transition: .3s;
+    cursor: pointer;
+    float: right;
+    user-select: none;
+    border-radius: $button-size/7;
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      transition: 0;
+    }
+  }
+
+  .lines {
+    @include line;
+    position: relative;
+
+    &:before, &:after {
       @include line;
-      position: relative;
+      position: absolute;
+      left: 0;
+      content: '';
+      -webkit-transform-origin: $button-size/14 center;
+      transform-origin: $button-size/14 center;
+    }
+    &:before {
+      top: $button-size/4;
+    }
+    &:after {
+      top: -$button-size/4;
+    }
+  }
+
+  .lines-button.x2 {
+    .lines {
+      transition: background .3s .5s ease;
 
       &:before, &:after {
-       @include line;
-        position: absolute;
-        left:0;
-        content: '';
-        -webkit-transform-origin: $button-size/14 center;
-                transform-origin: $button-size/14 center;
+        //set transform origin
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        transition: top .3s .6s ease, -webkit-transform .3s ease;
+        transition: top .3s .6s ease, transform .3s ease;
+      }
+    }
+  }
+
+  .lines-button.x2.close {
+    .lines {
+      transition: background .3s 0s ease;
+      background: transparent;
+
+      &:before, &:after {
+        transition: top .3s ease, -webkit-transform .3s .5s ease; //delay the formation of the x till the minus is formed
+        transition: top .3s ease, transform .3s .5s ease; //delay the formation of the x till the minus is formed
+        top: 0;
+        width: $button-size;
       }
       &:before {
-        top: $button-size/4;
+        -webkit-transform: rotate3d(0, 0, 1, 45deg);
+        transform: rotate3d(0, 0, 1, 45deg);
       }
       &:after {
-        top: -$button-size/4;
+        -webkit-transform: rotate3d(0, 0, 1, -45deg);
+        transform: rotate3d(0, 0, 1, -45deg);
       }
     }
-
-    .lines-button.x2{
-        .lines{
-          transition: background .3s .5s ease;
-
-          &:before, &:after{
-            //set transform origin
-          -webkit-transform-origin: 50% 50%;
-                  transform-origin: 50% 50%;
-            transition: top .3s .6s ease, -webkit-transform .3s ease;
-            transition: top .3s .6s ease, transform .3s ease;
-          }
-        }
-    }
-
-    .lines-button.x2.close{
-      .lines {
-        transition: background .3s 0s ease;
-        background: transparent;
-
-        &:before, &:after{
-          transition: top .3s ease, -webkit-transform .3s .5s ease;//delay the formation of the x till the minus is formed
-          transition: top .3s ease, transform .3s .5s ease;//delay the formation of the x till the minus is formed
-          top:0;
-          width: $button-size;
-        }
-        &:before{
-          -webkit-transform: rotate3d(0,0,1,45deg);
-                  transform: rotate3d(0,0,1,45deg);
-        }
-        &:after{
-          -webkit-transform: rotate3d(0,0,1,-45deg);
-                  transform: rotate3d(0,0,1,-45deg);
-        }
-      }
-    }
+  }
 }
