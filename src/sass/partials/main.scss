@@ -1,13 +1,22 @@
+html, body { position: relative; }
+
 section {
     position: relative;
     width: 100%;
     border-bottom: 1px solid #eeeeee;
+    clear: both;
 
     h1 {
         font-size: 32px;
         margin-bottom: 30px;
 
         i { margin-right: 10px; }
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 30px auto 20px;
+        font-weight: bold;
     }
 
     .row {
@@ -153,6 +162,8 @@ section {
 }
 
 .HT_faq_list {
+    display: block;
+    position: relative;
     li {
         border-bottom: 1px dotted #d7d7d7;
         padding-bottom: 25px;
@@ -164,6 +175,28 @@ section {
         font-size: 18px;
         padding-bottom: 10px;
     }
+}
+.HT_minibull { margin-top: 15px; }
+.HT_minibull li {
+    margin: 5px 0 10px;
+    padding-left: 14px;
+    line-height:normal;
+    position:relative;
+}
+
+.HT_minibull li:before {
+    content: "●";
+    color:#606060;
+    display:inline-block;
+    width:10px;
+    height:10px;
+    font-size:12px;
+    left:0;
+    position: absolute;
+}
+
+#text_toggle {
+    text-align: right;
 }
 
 #map-canvas {

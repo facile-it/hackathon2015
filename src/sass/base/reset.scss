@@ -18,6 +18,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  position: inherit;
   color: $secondary-color;
 }
 
@@ -35,6 +36,14 @@ a {
   }
   text-decoration: none;
 }
+
+.clearfix:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.hide { display: none;}
 
 ol, ul {
   list-style: none; }

@@ -7,6 +7,12 @@ $(document).ready(function() {
         return true;
     });
 
+    $("#text_toggle").click(function(e) {
+        e.preventDefault();
+        $(".text_hide").slideToggle();
+        $(this).html($(this).text() == 'Nascondi' ? 'Leggi tutto »' : 'Nascondi');
+        return true;
+    });
 
     $("#content_tab li").hide(); // Initially hide all content
     $("#tabs li:first").attr("id","current"); // Activate first tab
@@ -25,8 +31,6 @@ $(document).ready(function() {
         }
     });
 
-    var $window = $(window); //You forgot this line in the above example
-
     $('section[data-type="background"]').each(function(){
         var $bgobj = $(this); // assigning the object
 
@@ -39,42 +43,29 @@ $(document).ready(function() {
             // Move the background
             $bgobj.css({ backgroundPosition: coords });
 
-            $bgobj.find('.row').css({
-                'margin-top' : -(yPos)+"px"
-            }); 
         });
     });
 
-    var offset = 0;
-
-    $('nav a[href^="#"]').on('click',function (e) {
-
-        if ($(window).width() < 840) {
-            $('nav').removeClass('open');
-            $('.lines-button').removeClass('close');
-            $offset = 0;
-        }
-        else {
-            $offset = 70;
-        }
-
-        // target element id
-        var id = $(this).attr('href');
-
-        // target element
-        var $id = $(id);
-        if ($id.length === 0) {
-            return;
-        }
-
-        // prevent standard hash navigation (avoid blinking in IE)
+    $('nav a[href*=#]:not([href=#])').click(function(e) {
         e.preventDefault();
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
 
-        // top position relative to the document
-        var pos = $(id).offset().top - $offset;
+             if ($(".lines-button").hasClass('close')) {
+                 $(".lines-button").removeClass('close');
+                 $("nav").removeClass('open');
 
-        // animated top scrolling
-        $('body, html').animate({scrollTop: pos});
+                 $('html,body').animate({ scrollTop: target.offset().top }, 1000);
+                 return false;
+             }
+             else {
+                 $('html,body').animate({ scrollTop: target.offset().top - 70}, 1000);
+                 return false;
+             }
+          }
+        }
     });
 });
 

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'hackathon';
-	src:url('../font/hackathon.eot?239dgb');
-	src:url('../font/hackathon.eot?#iefix239dgb') format('embedded-opentype'),
-		url('../font/hackathon.ttf?239dgb') format('truetype'),
-		url('../font/hackathon.woff?239dgb') format('woff'),
-		url('../font/hackathon.svg?239dgb#hackathon') format('svg');
+	src:url('../font/hackathon.eot?1dxl7');
+	src:url('../font/hackathon.eot?#iefix1dxl7') format('embedded-opentype'),
+		url('../font/hackathon.ttf?1dxl7') format('truetype'),
+		url('../font/hackathon.woff?1dxl7') format('woff'),
+		url('../font/hackathon.svg?1dxl7#hackathon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,7 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.HT_icon_logo_faccino:before {	content: "\e60e";}
 .HT_icon_chatBubble:before {content: "\e60c";}
 .HT_icon_question_alt:before {	content: "\e60d";}
 .HT_icon_maps:before {	content: "\e608";}
