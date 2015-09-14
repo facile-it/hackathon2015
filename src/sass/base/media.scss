@@ -9,12 +9,6 @@
             padding: 0 10px;
             width: auto !important;
             display: block;
-
-            .HT_icon {
-                line-height: 55px;
-                margin-top: 0;
-                height: auto;
-            }
         }
         nav {
             float: none;
@@ -52,9 +46,9 @@
         padding-top: 0;
     }
     .first_section .HT_icon {
-        margin-top: 30px !important;
+        margin-top: 45px !important;
         width: 100%;
-        font-size: 75px;
+        font-size: 35px !important;
     }
     .first_section h1 { font-size: 20px;  }
     .schedule_day { line-height: 2em;  }
@@ -122,11 +116,6 @@
         .logo {
             padding: 5px 0 5px 135px !important;
             background-size: auto 37px !important;
-
-            .HT_icon {
-                font-size: 30px !important;
-                height: auto;
-            }
         }
 
         nav {
@@ -188,11 +177,6 @@
         .logo {
             padding: 7px 12px 7px 180px;
             background-size: auto 40px;
-
-            .HT_icon {
-                font-size: 40px;
-                height: auto;
-            }
         }
 
         nav {
@@ -209,6 +193,9 @@
     section h1 {
         font-size: 20px;
     }
+    .first_section .HT_icon {
+        font-size: 45px;
+    }
 
     .biglietti { width: 100%; }
 
@@ -221,12 +208,6 @@
             padding: 12px 12px 12px 165px;
             background-size: auto 45px;
             background-position: 5px 10px;
-
-            .HT_icon {
-                font-size: 50px;
-                height: auto;
-                margin-top: 70px;
-            }
         }
 
         nav {
@@ -246,10 +227,11 @@
     }
 
     .first_section {
-        min-height:  500px;
+        min-height:  450px;
 
         .HT_icon {
             margin-top: 70px;
+            font-size: 50px;
         }
     }
     .lista_giuria p {
