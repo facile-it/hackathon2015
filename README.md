@@ -23,7 +23,7 @@ make kill
 
 # Deploy
 
-To deploy to the gh-pages you have to issue the following commands:
+To deploy to the gh-pages just issue the following commands:
 
 ```
 make build
